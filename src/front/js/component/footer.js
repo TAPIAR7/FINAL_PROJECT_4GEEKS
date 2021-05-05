@@ -26,7 +26,11 @@ export const Footer = () => (
 			<i className="fab fa-twitter fa-3x pr-2" />
 		</button>
 
+		<button onClick={() => window.open("https://www.gmail.com")} id="myButtonMail" className="btn request-callback">
+			{" "}
+			<i className="fas fa-envelope fa-3x " />
+		</button>
+
 		<i className="fas fa-phone-alt fa-3x pr-1" />
-		<i className="fas fa-envelope fa-3x " />
 	</footer>
 );
