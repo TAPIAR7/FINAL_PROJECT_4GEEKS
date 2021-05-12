@@ -11,6 +11,7 @@ import { Reset } from "./pages/reset";
 import { Register } from "./pages/register";
 
 import { Login } from "./pages/login";
+import { Specific_product } from "./pages/specificProduct";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -42,6 +43,9 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/login">
 							<Login />
+						</Route>
+						<Route exact path="/specific_product">
+							<Specific_product />
 						</Route>
 						<Route exact path="/reset">
 							<Reset />
