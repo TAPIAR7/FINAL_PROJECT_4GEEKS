@@ -13,7 +13,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+
+			parts: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -28,6 +30,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => setStore({ message: data.message }))
 					.catch(error => console.log("Error loading message from backend", error));
 			},
+
+			getPart: () => {
+				// fetching data from the backend
+				fetch(process.env.BACKEND_URL + "/api/chassisparts")
+					.then(resp => resp.json())
+					.then(data => setStore({ data }))
+					.catch(error => console.log("Error loading message from backend", error));
+			},
+
+			// getPart: async () => {
+			// 	const url = process.env.BACKEND_URL;
+			// 	const requestOption = {
+			// 		method: "GET",
+			// 		headers: {
+			// 			"Content-Type": "application/json"
+			// 		}
+			// 	};
+			// 	let response = await fetch(url, requestOption);
+			// 	let data = await response.json();
+			//     setStore({ data });
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
