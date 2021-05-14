@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
+
 import { Product } from "./pages/product";
+import { Repind } from "./component/repind";
 
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
@@ -40,6 +42,11 @@ const Layout = () => {
 						<Route exact path="/product">
 							<Product />
 						</Route>
+
+						<Route exact path="/repind/:id1">
+							<Repind />
+						</Route>
+
 						<Route exact path="/login">
 							<Login />
 						</Route>

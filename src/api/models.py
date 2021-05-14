@@ -17,3 +17,29 @@ class User(db.Model):
             "email": self.email,
             # do not serialize the password, its a security breach
         }
+
+class Chassis_Parts(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(120), unique=False, nullable=False)
+    system = db.Column(db.String(80), unique=False, nullable=False)
+    amount = db.Column(db.Integer, unique=False, nullable=False)
+    numberpart=db.Column(db.Integer, unique=False, nullable=False)
+    image= db.Column(db.String(80), unique=False, nullable=False)
+    description=db.Column(db.String(200), unique=False, nullable=False)
+    price=db.Column(db.Integer, unique=False, nullable=False)
+
+
+    def __repr__(self):
+        return '<Chassis_Parts %r>' % self.name
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "name ": self.name,
+            "system": self.system,  #conjunto al cual pertenece la parte.
+            "amount": self.amount,
+            "numberpart": self.numberpart,
+            "image": self. image,
+            "description": self.description
+            # do not serialize the password, its a security breach
+        }

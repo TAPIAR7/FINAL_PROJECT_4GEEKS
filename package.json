@@ -85,6 +85,7 @@
 		"popper.js": "^1.16.1",
 		"post-npm-install": "^2.0.0",
 		"prop-types": "^15.6.1",
+		"props": "^0.3.0",
 		"react": "^16.8.4",
 		"react-bootstrap": "^1.5.2",
 		"react-dom": "^16.14.0",

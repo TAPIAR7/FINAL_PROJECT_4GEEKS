@@ -13,10 +13,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+
+			provision: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
+
+			loadProvision: async () => {
+				const url = process.env.BACKEND_URL + "/api/chassis_parts";
+				const response = await fetch(url);
+				const data = await response.json();
+				console.log(data);
+				setStore({ provision: data }); //variable global
+			},
+
+			// loadProvision: () => {
+			// 	// fetching data from the backend
+			// 	fetch(process.env.BACKEND_URL + "/api/chassis_parts")
+			// 		.then(resp => resp.json())
+			// 		.then(data => setStore({ provision: data.provision }))
+			// 		.catch(error => console.log("Error loading message from backend", error));
+			// },
+
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
