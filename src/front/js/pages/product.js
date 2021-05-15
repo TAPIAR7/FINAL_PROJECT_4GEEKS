@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { Context } from "../store/appContext";
 import { engranaje } from "../../img/engranaje.png";
 // import { cluth } from "../../img/cluth.jpg";
 // import { frenos } from "../../img/frenos.jpg";
@@ -7,6 +9,8 @@ import { Repuesto } from "../component/repuesto";
 import "../../styles/product.scss";
 
 export const Product = () => {
+	const { store } = useContext(Context);
+
 	return (
 		<div className="bg-ColorClaro">
 			<div className="container bg-ColorClaro">
@@ -66,10 +70,17 @@ export const Product = () => {
 						<h1 className="text-left">Categoria A</h1>
 
 						<div className="scrolling-wrapper">
-							<Repuesto />
-							<Repuesto />
-							<Repuesto />
-							<Repuesto />
+							{store.provision.map((item, index) => {
+								return (
+									<Repuesto
+										key={index}
+										name={"name:" + item.name}
+										numberpart={"numberpart : " + item.numberpart}
+										system={"system : " + item.system}
+										id1={index}
+									/>
+								);
+							})}
 						</div>
 					</div>
 				</div>
@@ -79,10 +90,17 @@ export const Product = () => {
 						<div className="col-9 ">
 							<h1 className="text-left">Categoria B</h1>
 							<div className="scrolling-wrapper ">
-								<Repuesto />
-								<Repuesto />
-								<Repuesto />
-								<Repuesto />
+								{store.provision.map((item, index) => {
+									return (
+										<Repuesto
+											key={index}
+											name={"name:" + item.Name}
+											numberpart={"numberpart : " + item.numberpart}
+											system={"system : " + item.system}
+											id1={index}
+										/>
+									);
+								})}
 							</div>
 						</div>
 					</div>

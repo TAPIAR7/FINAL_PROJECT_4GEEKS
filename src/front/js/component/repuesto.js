@@ -17,8 +17,8 @@ export const Repuesto = props => {
 				/>
 				<div className="card-body">
 					<h5 className="card-title">{props.name}</h5>
-					<p className="card-text"></p>
-					<p className="card-text"></p>
+					<p className="card-text">{props.numberpart}</p>
+					<p className="card-text">{props.system}</p>
 
 					<Link to={"/repind/" + props.id1}>
 						<div className=" text-left">
@@ -37,5 +37,7 @@ export const Repuesto = props => {
 
 Repuesto.propTypes = {
 	name: PropTypes.string,
-	id1: PropTypes.number
+	id1: PropTypes.integer,
+	numberpart: PropTypes.integer,
+	system: PropTypes.string
 };
