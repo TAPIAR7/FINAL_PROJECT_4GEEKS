@@ -14,9 +14,15 @@ export const Product = () => {
 	};
 	useEffect(() => {
 		actions.loadProduct();
+		actions.loadCars();
 	}, []);
-	//  La siguiente constante contiene la información de prueba para las card
+	console.log(store.product);
+	console.log(store.cars);
 
+	//Obtenemos los datos únicos de producto en cuanto a vehículos, marca y año
+
+	const uniqueMarca = [...new Set(store.product.map(item => item.marca))]; // [ 'A', 'B']
+	console.log(uniqueMarca);
 	//La siguiente constante almacena el mapeo de las card, será llamado posteriormente en el ultimo bloque que renderiza el objeto
 	let getCards = store.product.map((item, index) => {
 		// el siguiente código genera el botón de favorito  relleno o vacío según la data en lista de favoritos
@@ -52,7 +58,7 @@ export const Product = () => {
 						</div>
 						<div className="dropdown-divider" />
 						<div className="d-flex justify-content-between">
-							<Link to={"/productdetail"}>
+							<Link to={"/productdetail/" + index}>
 								<div className="btn btn-dark btn-block" variant="outline-primary">
 									Detalles
 								</div>

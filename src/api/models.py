@@ -59,7 +59,6 @@ class Wish_list(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id=db.Column(db.Integer, db.ForeignKey("user.id"))
     product_id=db.Column(db.Integer, db.ForeignKey("product.id"))
-    
     user_relation= db.relationship("User", lazy='subquery', backref=db.backref("Wish_list", cascade="all,delete")) 
     product_relation= db.relationship("Product", lazy='subquery', backref=db.backref("Wish_list", cascade="all,delete"))    
     def _repr_(self):
