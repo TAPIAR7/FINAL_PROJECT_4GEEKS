@@ -30,7 +30,7 @@ class Product(db.Model):
     precio = db.Column(db.Integer, unique=False, nullable=False) 
     item = db.Column(db.Integer, unique=False, nullable=False)
     enlace= db.Column(db.String(1024), unique=False, nullable=False)
-    cardid = db.Column(db.Integer, unique=False, nullable=False)
+    cardid = db.Column(db.String(120), unique=True, nullable=False)
     
    
  
@@ -47,7 +47,7 @@ class Product(db.Model):
             "precio":self.precio,
             "item":self.item,
             "enlace":self.enlace,
-            "cardid":self.cardid
+            "carid":self.cardid
             
           
             # do not serialize the password, its a security breach

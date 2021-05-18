@@ -159,5 +159,21 @@ def getpart():                        #este método se llamará cuando el client
     request = list(map(lambda x: x.serialize(), parts ))
     return jsonify( request), 200 
 
+# @app.route('/product/<id>', methods=["PUT"])
+# def update_personajes(id):
+#     request_body = request.get_json()
+#     characters = Product.query.get(id)
+#     if characters is None:
+#         raise APIException("usuario no existe!", status_code=404)
+    
+#     if "mass" in request_body:
+#         product.nombre = request_body["nombre"]
+#     if "name" in request_body:
+#         product.marca = request_body["marca"]
+
+#     db.session.commit()
+    
+#     return jsonify("usuario Update, OK!"),200 
+
 
 
