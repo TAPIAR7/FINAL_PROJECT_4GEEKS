@@ -48,7 +48,7 @@ class Product(db.Model):
             "precio":self.precio,
             "item":self.item,
             "enlace":self.enlace,
-            "carid":self.cardid
+            "cardid":self.cardid
              
             # do not serialize the password, its a security breach
         } 
