@@ -32,6 +32,7 @@ class Product(db.Model):
     enlace= db.Column(db.String(1024), unique=False, nullable=False)
     cardid = db.Column(db.String(120), unique=True, nullable=False)
     
+    
    
  
     
@@ -48,8 +49,7 @@ class Product(db.Model):
             "item":self.item,
             "enlace":self.enlace,
             "carid":self.cardid
-            
-          
+             
             # do not serialize the password, its a security breach
         } 
 
