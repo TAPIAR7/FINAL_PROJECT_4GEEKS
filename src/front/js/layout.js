@@ -7,8 +7,16 @@ import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import { Homed } from "./pages/homed";
-import { Reset } from "./pages/reset";
 import { Register } from "./pages/register";
+import { ProductDetail } from "./pages/productdetail";
+import { Recovery } from "./pages/sendcode";
+import { ConfirmCode } from "./pages/confirmcode";
+import { ChangePassword } from "./pages/changepassword";
+import { Favs } from "./pages/favsdetail";
+import { AboutUs } from "./pages/about";
+import { Landing } from "./pages/landing";
+import { CargarBase } from "./pages/loadDataBaseProducts";
+import { PruebaCarga } from "./pages/boton";
 
 import { Login } from "./pages/login";
 import injectContext from "./store/appContext";
@@ -28,7 +36,7 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
-						<Route exact path="/">
+						<Route exact path="/home">
 							<Homed />
 						</Route>
 						<Route exact path="/demo">
@@ -43,11 +51,35 @@ const Layout = () => {
 						<Route exact path="/login">
 							<Login />
 						</Route>
-						<Route exact path="/reset">
-							<Reset />
-						</Route>
 						<Route exact path="/register">
 							<Register />
+						</Route>
+						<Route exact path="/productdetail/:theIndx">
+							<ProductDetail />
+						</Route>
+						<Route exact path="/recovery">
+							<Recovery />
+						</Route>
+						<Route exact path="/confirmcode">
+							<ConfirmCode />
+						</Route>
+						<Route exact path="/changepassword">
+							<ChangePassword />
+						</Route>
+						<Route exact path="/pay">
+							<Favs />
+						</Route>
+						<Route exact path="/about">
+							<AboutUs />
+						</Route>
+						<Route exact path="/">
+							<Landing />
+						</Route>
+						<Route exact path="/abcdfghijkl">
+							<CargarBase />
+						</Route>
+						<Route exact path="/prueba">
+							<PruebaCarga />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
